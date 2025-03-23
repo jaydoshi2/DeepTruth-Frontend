@@ -25,7 +25,7 @@ function App() {
     setLoading(true);
     setGoClicked(true);
     
-    axios.post('http://127.0.0.1:8000/api/verify-claim/', { article_title: searchText })
+    axios.post('http://44.201.55.224:8000/api/verify-claim/', { article_title: searchText })
       .then(response => {
         setLoading(false);
         const data = response.data;
@@ -191,7 +191,7 @@ function App() {
                   fontWeight: "bold",
                 }}
               >
-                Credibility
+                Confidence
               </h2>
               {renderCircularProgress(animatedCredibility, 180)}
             </div>
