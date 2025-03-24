@@ -3,11 +3,22 @@
     filter: drop-shadow(0 0 2px #b700ff) drop-shadow(0 0 4px #b700ff);
   }
   50% {
-    filter: drop-shadow(0 0 5px #b700ff) drop-shadow(0 0 10px #b700ff)
-      drop-shadow(0 0 15px #00ffcc);
+    filter: drop-shadow(0 0 5px #b700ff) drop-shadow(0 0 10px #b700ff) drop-shadow(0 0 15px #00ffcc);
   }
   100% {
     filter: drop-shadow(0 0 2px #b700ff) drop-shadow(0 0 4px #b700ff);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 5px #b700ff, 0 0 10px #b700ff;
+  }
+  50% {
+    text-shadow: 0 0 10px #b700ff, 0 0 20px #b700ff, 0 0 30px #00ffcc;
+  }
+  100% {
+    text-shadow: 0 0 5px #b700ff, 0 0 10px #b700ff;
   }
 }
 
@@ -28,13 +39,17 @@ h1 {
   font-size: clamp(2em, 7vw, 7em);
   font-weight: bold;
   color: white;
-  text-shadow: 0 0 5px grey, 0 0 10px grey, 0 0 20px grey, 0 0 40px grey,
-    0 0 80px grey;
+  text-shadow: 0 0 5px grey, 0 0 10px grey, 0 0 20px grey, 0 0 40px grey, 0 0 80px grey;
   letter-spacing: 2px;
   padding: 20px;
   font-family: "Arial", sans-serif;
   animation: neonGlow 1.5s infinite alternate;
   margin: 0.5em 0;
+}
+
+/* Add glowing effect to News Credibility Checker */
+h1:contains("News Credibility Checker") {
+  animation: textGlow 1.5s infinite alternate;
 }
 
 button {
@@ -136,6 +151,10 @@ ul li {
   transform: scale(clamp(0.7, 0.8, 1));
 }
 
+.neon-glow-circle {
+  animation: circleNeonGlow 1.5s infinite alternate;
+}
+
 .neon-percentage {
   position: absolute;
   inset: 0;
@@ -145,34 +164,49 @@ ul li {
   font-size: clamp(24px, 4vw, 32px);
   font-weight: bold;
   color: #ffffff;
-  animation: neonGlow 1.5s infinite alternate;
+  animation: textGlow 1.5s infinite alternate;
 }
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
   #load {
     flex-direction: column;
   }
-  
+
   .credibility-container,
   .authenticity-container {
     width: 100%;
     margin: 10px 0;
   }
+
+  h1 {
+    padding: 10px;
+    margin-top: 50px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   body {
-    padding: 10px;
+    padding: 5px;
   }
-  
+
   button {
     width: 100%;
     margin: 5px 0;
   }
-  
+
   input[type="text"] {
     width: 100%;
     margin: 5px 0;
   }
+
+  h1 {
+    font-size: clamp(1.5em, 6vw, 5em);
+    padding: 5px;
+  }
 }
+
