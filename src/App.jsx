@@ -25,7 +25,7 @@ function App() {
     setLoading(true);
     setGoClicked(true);
     
-    axios.post('http://44.201.55.224:8000/api/verify-claim/', { article_title: searchText })
+    axios.post('https://44.201.55.224:8000/api/verify-claim/', { article_title: searchText })
       .then(response => {
         setLoading(false);
         const data = response.data;
