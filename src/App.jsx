@@ -23,7 +23,7 @@ function App() {
 
   const handleGoClick = () => {
     setLoading(true);
-    setGoClicked(true);s
+    setGoClicked(true);
     
     axios.post('https://api.deeptruth.us/api/verify-claim/', { article_title: searchText })
       .then(response => {
