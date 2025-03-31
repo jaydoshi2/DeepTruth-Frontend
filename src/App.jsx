@@ -23,9 +23,9 @@ function App() {
 
   const handleGoClick = () => {
     setLoading(true);
-    setGoClicked(true);
+    setGoClicked(true);s
     
-    axios.post('https://44.201.55.224:8000/api/verify-claim/', { article_title: searchText })
+    axios.post('https://api.deeptruth.us/api/verify-claim/', { article_title: searchText })
       .then(response => {
         setLoading(false);
         const data = response.data;
