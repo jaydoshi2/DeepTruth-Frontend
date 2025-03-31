@@ -1,6 +1,9 @@
 # DeepTruth - News Credibility Checker
 
-![DeepTruth Logo](src/assets/logo.png)
+<div align="center">
+  <img src="Chrome Extension/images/icon128.png" alt="DeepTruth Logo" width="128" height="128">
+  <p><em>Unveiling Truth in the Digital Age</em></p>
+</div>
 
 DeepTruth is a modern web application designed to verify the credibility of news articles using advanced AI and machine learning techniques. This frontend application provides an intuitive interface for users to check the authenticity of news articles and receive detailed credibility analysis.
 
